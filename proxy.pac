@@ -25,6 +25,13 @@ function FindProxyForURL(url, host) {
     return proxy;
   }
 
+// Условия для 2ip.ru
+  if (
+    shExpMatch(host, "2ip.ru")
+  ) {
+    return proxy;
+  }
+
   // Для всех остальных запросов - подключаться напрямую
   return "DIRECT";
 }
